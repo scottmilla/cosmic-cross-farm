@@ -30,15 +30,15 @@ const moon = phases[Math.floor(((age < 0 ? age + SYNODIC : age) / SYNODIC) * 8 +
       <ul v-else>
         <li v-for="l in game.cart.value" :key="l.tree.id">
           <span>{{ l.tree.variety }} {{ l.tree.type }} × {{ l.qty }}</span>
-          <b>${{ l.tree.price * l.qty }}</b>
+          <b>{{ formatUsd(l.tree.price * l.qty) }}</b>
         </li>
       </ul>
       <div v-if="game.cart.value.length" class="total">
-        <span>Total</span><b>${{ game.cartTotal.value }}</b>
+        <span>Total</span><b>{{ formatUsd(game.cartTotal.value) }}</b>
       </div>
-      <button v-if="game.cart.value.length" class="btn btn-primary" disabled title="Checkout arrives with Shopify">
-        Checkout (coming soon)
-      </button>
+      <NuxtLink v-if="game.cart.value.length" to="/ark" class="btn btn-primary" style="display:block;text-align:center;text-decoration:none">
+        Checkout with Arkade ⚡
+      </NuxtLink>
     </div>
 
     <div class="hud-bottom">
