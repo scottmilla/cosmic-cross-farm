@@ -41,7 +41,7 @@ async function view() {
           </div>
         </dl>
         <footer>
-          <span class="price">${{ game.selected.value.price }}</span>
+          <span class="price">{{ formatUsd(game.selected.value.price) }}</span>
           <button class="btn" @click="view">{{ more ? 'Show less' : 'View more' }}</button>
           <button class="btn btn-primary" @click="buy">Buy this tree</button>
         </footer>

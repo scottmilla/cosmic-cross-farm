@@ -10,6 +10,18 @@ export default defineNuxtConfig({
     optimizeDeps: { include: ['three', '@tresjs/core'] },
   },
   devtools: { enabled: false },
+  // Override with NUXT_PUBLIC_ARK_* env vars (see ARK.md). Operator URLs are from the Arkade developer-resources docs.
+  runtimeConfig: {
+    arkMnemonic: '', // private; set NUXT_ARK_MNEMONIC on the server only
+    public: {
+      ark: {
+        provider: 'arkade-sdk',
+        network: 'bitcoin',
+        operatorUrl: 'https://arkade.computer',
+        satsPerUsd: 0, // 0 = unset; no price oracle is documented by Arkade, so set a rate yourself
+      },
+    },
+  },
   app: {
     head: {
       title: 'Cosmic Cross Farm',

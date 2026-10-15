@@ -14,7 +14,7 @@ let toastTimer: ReturnType<typeof setTimeout> | undefined
 
 export function useGame() {
   const cartCount = computed(() => cart.value.reduce((n, l) => n + l.qty, 0))
-  const cartTotal = computed(() => cart.value.reduce((n, l) => n + l.qty * l.tree.price, 0))
+  const cartTotal = computed(() => Math.round(cart.value.reduce((n, l) => n + l.qty * l.tree.price, 0) * 100) / 100)
 
   function start() {
     started.value = true

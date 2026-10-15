@@ -49,7 +49,7 @@ export const trees: FruitTreeProduct[] = [
     id: 'yuzu', handle: 'yuzu-lemon', row: 'citrus', variety: 'Yuzu', type: 'Lemon', emoji: '🍋',
     tagline: 'Fragrant, bumpy, brave in the cold.',
     description: 'A prized aromatic citrus with knobbly yellow fruit and a perfume unlike any other lemon. One of the hardiest edible citrus you can grow outdoors.',
-    price: 85, facts: citrusFacts('Nov–Dec', '6–10 ft', '6–10'),
+    price: 1, facts: citrusFacts('Nov–Dec', '6–10 ft', '6–10'),
     look: { shape: 'citrus', leaf: '#2e8b57', leafAlt: '#267a4c', trunk: '#7a5230', fruit: '#f6d63a', fruitSize: 0.24, fruitStretch: 1, fruitCount: 16, bumpy: true, blossoms: true },
   },
   {
